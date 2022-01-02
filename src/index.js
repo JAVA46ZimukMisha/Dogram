@@ -12,5 +12,5 @@ for(let i = 0; i < anchors.length; i++) {
 function setDetails(anchor, name){
     console.log("anchor was pressed", anchor);
     detailsImage.setAttribute("src", anchor.getAttribute("href"));
-    detailsTitle.textContent = name.getAttribute("data-title") + ": " + anchor.getAttribute("data-details-title");
+    detailsTitle.textContent = name.textContent + ": " + anchor.getAttribute("data-details-title");
 }
