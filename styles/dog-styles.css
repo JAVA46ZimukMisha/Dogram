@@ -12,8 +12,8 @@
     --thumbnails-image-width: 20vw;
     --thumbnails-image-height: 18vw;
     --thumbnails-title-height: calc(var(--thumbnails-image-height)*0.33);
-    --thumbnails-hidden-image-width: 45vw;
-    --thumbnails-hidden-image-height: 39.5vw;
+    --thumbnails-hidden-image-width: 43vw;
+    --thumbnails-hidden-image-height: 38.5vw;
     --thumbnails-hidden-title-height: calc(var(--thumbnails-hidden-image-height)*0.33);
     --ditails-image-width: 70vw;
     --ditails-image-height: 60vw;
@@ -80,16 +80,17 @@ body {
     padding-top: 2,5vh;
 }
 .hidden .thumbnails-list {
-    flex-direction: column;
+    flex-direction: row;
     max-height: 85vh;
-    flex-wrap: nowrap;
+    max-width: 98vw;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
 .thumbnails-item {
     margin-top: 2vh;
     margin-left: 2vw;
-    border: 2px solid blue;
+    border: 2px solid rgb(244, 244, 247);
     max-width: var(--thumbnails-image-width);
     max-height: calc(var(--thumbnails-image-height)+var(--thumbnails-title-height));
     border-radius: 25%;
@@ -98,7 +99,7 @@ body {
 .hidden .thumbnails-item {
     max-width: var(--thumbnails-hidden-image-width);
     max-height: calc(var(--thumbnails-hidden-image-height)+var(--thumbnails-hidden-title-height));
-    min-height: 52.5vw;
+    min-height: 51vw;
 
 }
 .selected.thumbnails-item {
@@ -120,8 +121,8 @@ body {
 .thumbnails-title {
     display: block;
     text-align: center;
-    background-color: beige;
-    color: blue;
+    background-color: blue;
+    color: white;
     font-size: 1.2rem;
     height: var(--thumbnails-title-height);
     width: var(--thumbnails-image-width);
@@ -129,7 +130,7 @@ body {
 .hidden .thumbnails-title {
     height: var(--thumbnails-hidden-title-height);
     width: var(--thumbnails-hidden-image-width);
-    font-size: 2.3rem;
+    font-size: 2rem;
 }
 .footer-title {
     display: flex;
@@ -141,8 +142,8 @@ body {
         --thumbnails-image-width: 12vw;
         --thumbnails-image-height: 10vw;
         --thumbnails-title-height: calc(var(--thumbnails-image-height)*0.25);
-        --thumbnails-hidden-image-width: 30vw;
-        --thumbnails-hidden-image-height: 25vw;
+        --thumbnails-hidden-image-width: 24vw;
+        --thumbnails-hidden-image-height: 20vw;
         --thumbnails-hidden-title-height: calc(var(--thumbnails-hidden-image-height)*0.25);
         --ditails-image-width: 60vw;
         --ditails-image-height: 43vw;
@@ -177,7 +178,7 @@ body {
     .hidden .thumbnails-list {
         flex-direction: row;
         max-width: 93vw;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         padding-right: 0;
@@ -194,8 +195,8 @@ body {
     .hidden .thumbnails-item {
         max-width: var(--thumbnails-hidden-image-width);
         max-height: calc(var(--thumbnails-hidden-image-height)+var(--thumbnails-hidden-title-height));
-        min-height: 31.2vw;
-        min-width: 30vw;
+        min-height: 24vw;
+        min-height: 24vw;
         margin-right: 4vw;
     }
     .hidden .thumbnails-item#last-item {
@@ -233,6 +234,6 @@ body {
         font-size: 1.5rem; 
     }
     .hidden .thumbnails-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 }
