@@ -98,7 +98,7 @@ body {
 .hidden .thumbnails-item {
     max-width: var(--thumbnails-hidden-image-width);
     max-height: calc(var(--thumbnails-hidden-image-height)+var(--thumbnails-hidden-title-height));
-    min-height: 53.2vw;
+    min-height: 52.5vw;
 
 }
 .selected.thumbnails-item {
