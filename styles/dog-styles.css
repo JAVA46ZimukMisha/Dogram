@@ -12,6 +12,9 @@
     --thumbnails-image-width: 20vw;
     --thumbnails-image-height: 18vw;
     --thumbnails-title-height: calc(var(--thumbnails-image-height)*0.33);
+    --thumbnails-hidden-image-width: 45vw;
+    --thumbnails-hidden-image-height: 39.5vw;
+    --thumbnails-hidden-title-height: calc(var(--thumbnails-hidden-image-height)*0.33);
     --ditails-image-width: 70vw;
     --ditails-image-height: 60vw;
 }
@@ -24,7 +27,6 @@ body {
     justify-content: space-between;
     margin: 0;
     background-color: darkseagreen;
-    /* align-items: center; */
 }
 .logo-title {
     background-color: fuchsia;
@@ -39,6 +41,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.hidden .details-container {
+    display: none
 }
 .details-div {
     position: relative;
@@ -57,6 +62,11 @@ body {
     font-family: airstream;
     font-style: italic;
 }
+.hide-button {
+    position: absolute;
+    top: 2vw;
+    right: 3vw;
+}
 .thumbnails-list {
     display: flex;
     flex-direction: row;
@@ -64,10 +74,17 @@ body {
     max-height: 35vh;
     overflow-y: auto;
     justify-content: space-around;
+    align-items: flex-end ;
     list-style-type: none;
     padding: 0;
     padding-top: 2,5vh;
-    /* margin: 0; */
+}
+.hidden .thumbnails-list {
+    flex-direction: column;
+    max-height: 85vh;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 .thumbnails-item {
     margin-top: 2vh;
@@ -78,6 +95,16 @@ body {
     border-radius: 25%;
     overflow: hidden;
 }
+.hidden .thumbnails-item {
+    max-width: var(--thumbnails-hidden-image-width);
+    max-height: calc(var(--thumbnails-hidden-image-height)+var(--thumbnails-hidden-title-height));
+    min-height: 53.2vw;
+
+}
+.selected.thumbnails-item {
+    border-radius: 0;
+    border: 3px solid green;
+}
 .thumbnails-anchor {
     text-decoration: none;
 }
@@ -85,6 +112,10 @@ body {
     width: var(--thumbnails-image-width);
     height: var(--thumbnails-image-height);
     display: block;
+}
+.hidden .thumbnails-image {
+    width: var(--thumbnails-hidden-image-width);
+    height: var(--thumbnails-hidden-image-height);
 }
 .thumbnails-title {
     display: block;
@@ -94,7 +125,11 @@ body {
     font-size: 1.2rem;
     height: var(--thumbnails-title-height);
     width: var(--thumbnails-image-width);
-    
+}
+.hidden .thumbnails-title {
+    height: var(--thumbnails-hidden-title-height);
+    width: var(--thumbnails-hidden-image-width);
+    font-size: 2.3rem;
 }
 .footer-title {
     display: flex;
@@ -106,6 +141,9 @@ body {
         --thumbnails-image-width: 12vw;
         --thumbnails-image-height: 10vw;
         --thumbnails-title-height: calc(var(--thumbnails-image-height)*0.25);
+        --thumbnails-hidden-image-width: 30vw;
+        --thumbnails-hidden-image-height: 25vw;
+        --thumbnails-hidden-title-height: calc(var(--thumbnails-hidden-image-height)*0.25);
         --ditails-image-width: 60vw;
         --ditails-image-height: 43vw;
     }
@@ -136,6 +174,14 @@ body {
         justify-content: flex-start;
         padding: 0;
     }
+    .hidden .thumbnails-list {
+        flex-direction: row;
+        max-width: 93vw;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 0;
+    }
     .thumbnails-item {
         margin-left:0;
         margin-top: 0;
@@ -145,8 +191,21 @@ body {
     .thumbnails-item + .thumbnails-item {
         margin-top: 2vh;
     }
+    .hidden .thumbnails-item {
+        max-width: var(--thumbnails-hidden-image-width);
+        max-height: calc(var(--thumbnails-hidden-image-height)+var(--thumbnails-hidden-title-height));
+        min-height: 31.2vw;
+        min-width: 30vw;
+        margin-right: 4vw;
+    }
+    .hidden .thumbnails-item#last-item {
+        margin-right: 0;
+    }
     .thumbnails-title {
         font-size: 1rem;
+    }
+    .hidden .thumbnails-title {
+        font-size: 1.8rem;
     }
 }@media (min-width: 900px) {
     .logo-title {
@@ -162,11 +221,18 @@ body {
         bottom: 3vw;
         font-size: 2rem;
     }
+    .hide-button {
+        top: 2vw;
+        right: 12vw;
+    }
     .thumbnails-list {
        max-height: 85vh;
        padding-right: 2vw
     }
     .thumbnails-title {
         font-size: 1.5rem; 
+    }
+    .hidden .thumbnails-title {
+        font-size: 3rem;
     }
 }
