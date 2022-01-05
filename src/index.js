@@ -16,7 +16,7 @@ function setDetails(anchor){
     let hrefValue = anchor.getAttribute("href");
     detailsImage.setAttribute("src", hrefValue);
     anchor.parentElement.classList.add("selected");
-    if (selectedItem){
+    if (selectedItem && selectedItem!=anchor.parentElement){
         selectedItem.classList.remove("selected");
     }
     selectedItem = anchor.parentElement;
