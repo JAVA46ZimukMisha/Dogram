@@ -48,6 +48,7 @@ body {
 .details-div {
     position: relative;
     width: var(--ditails-image-width);
+    transition: 1.7s cubic-bezier(0.3, 0.5, 0.7, 5);
 }
 .details-image {
     width: var(--ditails-image-width);
@@ -136,6 +137,14 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+.thumbnails-item:hover {
+    transform: scale(1.1);
+    transition: 50ms;
+}
+.is-tiny {
+    transform: scale(0.001);
+    transition: 0s;
 }
 @media (min-width: 568px){
     :root{
